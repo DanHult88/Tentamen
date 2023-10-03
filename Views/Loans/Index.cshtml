@@ -1,0 +1,38 @@
+﻿@model List<Loan>
+
+<div id="loan-management">
+
+    <div class="text-center">
+
+        <div>____________________________________________________________________________________</div>
+        <br />
+        <br />
+        <h1> Manage Loans</h1>
+        <br />
+        <div>____________________________________________________________________________________</div>
+        <br />
+
+        <a asp-action="Add" id="add-loan-link">Add a new loan</a>
+
+        <br />
+        
+        <div>____________________________________________________________________________________</div>
+        <br />
+
+    @foreach (Loan Item in Model)
+    {
+            <div class="loan-item">
+                <p>Loan number: <span class="loan-id">@Html.DisplayFor(modelItem => Item.Id)</span></p>
+
+                <a asp-action="Delete" asp-route-id="@Item.Id">Remove Loan</a><br />
+
+                <a asp-action="Details" asp-route-id="@Item.Id">View Details</a>
+
+                <hr />
+
+            </div>
+    }
+
+  
+
+</div>

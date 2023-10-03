@@ -1,0 +1,28 @@
+﻿@model List<BookClub>
+
+<h1>Book-Clubs</h1>
+
+<a id="add-book-club-btn" asp-action="Create">Add a new Bookclub</a>
+
+
+
+<div id="book-club-list" class="book-club-list">
+    
+    <ul class="book-club-list__ul">
+        @foreach (BookClub item in Model)
+        {
+                    <li class="book-club-list__li">
+                        <h3 class="book-club-list__title">@Html.DisplayFor(modelItem => item.Name)</h3>
+                        <ul class="book-club-list__users">
+                    @foreach (User user in item.users)
+                    {
+                                        <li class="book-club-list__user">@user.Name</li>
+                    }
+                        </ul>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Remove book club</a>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit book club</a>
+                    </li>
+        }
+    </ul>
+</div>

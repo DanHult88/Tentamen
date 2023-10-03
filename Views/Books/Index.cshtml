@@ -1,0 +1,59 @@
+﻿@model List<Book>
+
+<div class="text-center">
+
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+    <h1> Books</h1>
+    <br />
+    <div>____________________________________________________________________________________</div>
+    <br />
+
+    <a asp-action="Create" id="add-book-link">Add a new book</a> <br />
+
+    <a asp-action="Search" id="search-books-link">Search for books in a genre</a>
+
+
+    <br />
+
+    <div>____________________________________________________________________________________</div>
+
+<br />
+
+@foreach (Book item in Model)
+{
+    <div class="book-item">
+        <p>Book Id: <span class="book-id">@Html.DisplayFor(modelItem => item.Id)</span></p>
+
+        <p>Title: <span class="book-title">@Html.DisplayFor(modelItem => item.Title)</span></p>
+
+        <p>
+            Author:
+            @foreach (Author author in item.Author)
+            {
+                <span class="book-author">@Html.DisplayFor(modelItem => author.Name)</span>
+            }
+        </p>
+
+        <p>
+            Genre:
+            @foreach (Genre genre in item.Genres)
+            {
+                <span class="book-genre">@Html.DisplayFor(modelItem => genre.Name)</span>
+            }
+        </p>
+        <p>ISBN: <span class="book-isbn">@Html.DisplayFor(modelItem => item.ISBN)</span></p>
+
+        <p>Inhouse: <span class="book-inhouse">@Html.DisplayFor(modelItem => item.Inhouse)</span></p>
+
+        <p>Checked out: <span class="book-checkedout">@Html.DisplayFor(modelItem => item.CheckedOut)</span></p>
+
+        <a asp-action="Delete" asp-route-id="@item.Id">Remove book</a>
+
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit book</a>
+        <hr />
+    </div>
+}
+
+

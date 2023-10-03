@@ -1,0 +1,10 @@
+﻿@model List<Book>
+
+<h1 class="genre-title"> Showing all books belonging to a genre: @ViewBag.GenreName </h1>
+
+@foreach (Book Item in Model)
+{
+        <div class="book-title">
+            <span>Title:</span> @Html.DisplayFor(modelItem => Item.Title)
+        </div>
+}

@@ -1,0 +1,59 @@
+﻿@model HemTenta.Models.BookClub
+
+<div class="text-center">
+
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+    <h1 id="edit-book-club-header">Edit Bookclub</h1>
+    <br />
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+
+
+
+<form id="change-name-form" asp-action="ChangeName" method="POST">
+
+    <input type="hidden" name="id" id="book-club-id" value="@Model.Id" />
+
+    <label for="name">Name:</label>
+
+    <input type="text" name="name" id="name-input" value="@Model.Name" />
+
+    <input type="submit" id="save-button" value="Save" />
+
+    <br /><br />
+
+    <label id="users-label">Users:</label>
+
+    <ul id="users-list">
+
+        @foreach (var user in Model.users)
+        {
+                <li>@user.Name</li>
+                <a asp-action="DeleteUser" asp-route-bookClubId="@Model.Id" asp-route-userId="@user.Id">Remove User</a>
+
+        }
+
+    </ul>
+
+</form>
+
+<br />
+
+<h2 id="add-users-header">Add users:</h2>
+<br />
+
+<form id="add-users-form" asp-action="AddUser" method="POST">
+    <input type="hidden" name="id" id="book-club-id" value="@Model.Id" />
+
+    Name of user:<input type="text" name="User1" id="user1-input" /><br />
+
+    Name of user:<input type="text" name="User2" id="user2-input" /><br />
+
+    Name of user:<input type="text" name="User3" id="user3-input" /><br />
+
+    <input type="submit" id="add-users-button" value="Add users" />
+
+</form>

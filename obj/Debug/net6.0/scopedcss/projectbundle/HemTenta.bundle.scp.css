@@ -1,0 +1,49 @@
+/* _content/HemTenta/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-rcmu1b3ikm] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-rcmu1b3ikm] {
+  color: #0077cc;
+}
+
+.btn-primary[b-rcmu1b3ikm] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-rcmu1b3ikm], .nav-pills .show > .nav-link[b-rcmu1b3ikm] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-rcmu1b3ikm] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-rcmu1b3ikm] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-rcmu1b3ikm] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-rcmu1b3ikm] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-rcmu1b3ikm] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

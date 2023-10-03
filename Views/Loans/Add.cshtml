@@ -1,0 +1,57 @@
+﻿<div class="text-center">
+
+<div>____________________________________________________________________________________</div>
+<br />
+<br />
+<h1> Add a new Loan</h1>
+<br />
+<div>____________________________________________________________________________________</div>
+<br />
+<br />
+
+
+<form class="form" asp-action="Add" method="POST">
+
+    <div class="form-group">
+
+        <label class="form-label" for="loan-date">Loan Date:</label>
+
+        <input class="form-input" type="text" name="LoanDate" id="loan-date" />
+
+    </div>
+
+    <div class="form-group">
+
+        <label class="form-label" for="due-date">Loan Due:</label>
+
+        <input class="form-input" type="text" name="DueDate" id="due-date" />
+
+    </div>
+
+    <div class="form-group">
+
+        <label class="form-label" for="book-id">Book Id:</label>
+
+        <input class="form-input" type="number" name="BookId" id="book-id" />
+
+    </div>
+
+    <div class="form-group">
+
+        <label class="form-label" for="user-name">User Name:</label>
+
+        <input class="form-input" type="text" name="Name" id="user-name" />
+
+    </div>
+
+    <div class="form-group">
+
+        <label class="form-label" for="user-lastname">User Last Name:</label>
+
+        <input class="form-input" type="text" name="LastName" id="user-lastname" />
+
+    </div>
+
+    <input class="form-btn" type="submit" value="Add new loan" />
+
+</form>

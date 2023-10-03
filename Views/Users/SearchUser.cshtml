@@ -1,0 +1,63 @@
+﻿@model HemTenta.Models.User
+
+
+<div class="user-details-container">
+
+    <div class="user-details-container" id="user-details-@Model.Id">
+
+        <div class="user-details-section">
+
+            <label class="user-details-label">Name:</label>
+
+            <span class="user-details-value">@Html.DisplayFor(model => model.Name)</span><br />
+        </div>
+        <div class="user-details-section">
+
+            <label class="user-details-label">Last Name:</label>
+
+            <span class="user-details-value">@Html.DisplayFor(model => model.LastName)</span><br />
+        </div>
+        <div class="user-details-section">
+
+            <label class="user-details-label">Address:</label>
+
+            <span class="user-details-value">@Html.DisplayFor(model => model.Adress)</span><br />
+
+        </div>
+        <div class="user-details-section">
+
+            <label class="user-details-label">Phone Number:</label>
+
+            <span class="user-details-value">@Html.DisplayFor(model => model.PhoneNumber)</span><br />
+
+        </div>
+
+        @if (Model.Loans != null && Model.Loans.Count > 0)
+        {
+            <h2 class="user-details-heading">Loans</h2>
+            <table class="user-loans-table">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Loan Date</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var loan in Model.Loans)
+                    {
+                        <tr>
+                            <td>@loan.Book.Title</td>
+                            <td>@loan.LoanDate</td>
+                            <td>@loan.DueDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="no-loans-message">No loans found for this user.</p>
+        }
+    </div>
+</div>

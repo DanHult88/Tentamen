@@ -1,0 +1,35 @@
+﻿@model HemTenta.Models.Book
+
+<div class="text-center">
+<div>____________________________________________________________________________________</div>
+<br />
+<br />
+
+<h2> Edit a book </h2>
+<br />
+
+<div>____________________________________________________________________________________</div>
+<br />
+<br />
+<form asp-action="Edit" method="POST">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    
+
+    Title: <br /> <input type="text" name="Title" value="@Html.DisplayFor(model => model.Title)" /><br /> <br />
+
+    
+
+    ISBN: <input type="text" name="ISBN" value="@Html.DisplayFor(model => model.ISBN)" /><br />
+
+
+    Inhouse: <input type="checkbox" name="Inhouse" value="true" @(Model.Inhouse ?? false ? "checked" : "") /><br />
+
+
+    CheckedOut: <input type="checkbox" name="CheckedOut" value="true" @(Model.CheckedOut ?? false ? "checked" : "") /><br />
+
+   
+    <input type="submit" value="Edit Book" />
+
+</form>

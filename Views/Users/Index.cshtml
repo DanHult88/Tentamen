@@ -1,0 +1,52 @@
+﻿@model List<User>
+<div class="text-center">
+
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+    <h1> Users</h1>
+    <br />
+    <div>____________________________________________________________________________________</div>
+
+<div class="page-container">
+    <br />
+
+    <a class="add-user-link" asp-action="Create">Add a new user</a>
+
+    <a class="search-user-link" asp-action="Search">Search for a user</a>
+
+
+    <br />
+
+        <div>____________________________________________________________________________________</div>
+
+    <br />
+    <br />
+
+    
+    @foreach (User Item in Model)
+    {
+            <div class="user-item" id="user-@Item.Id">
+              <span class="user">@Html.DisplayFor(modelItem => Item.Name)</span>
+               
+            <span class="user">@Html.DisplayFor(modelItem => Item.LastName)</span>
+
+            <span class="user">@Html.DisplayFor(modelItem => Item.Adress)</span>
+
+            <span class="user">@Html.DisplayFor(modelItem => Item.PhoneNumber)</span>
+
+            <a asp-action="Delete" asp-route-id="@Item.Id">Remove User</a>
+            <br />
+            <br />
+
+            <a asp-action="Edit" asp-route-id="@Item.Id">Edit User</a>
+
+                <br />
+
+            </div>
+    }
+
+   
+</div>
+
+

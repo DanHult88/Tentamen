@@ -1,0 +1,33 @@
+﻿@model HemTenta.Models.User
+
+<div class="text-center">
+
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+    <h1> Edit a User</h1>
+    <br />
+    <div>____________________________________________________________________________________</div>
+    <br />
+    <br />
+
+<form asp-action="Edit" method="POST">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    Name: <br /> <input type="text" name="Name" value="@Html.DisplayFor(model => model.Name)" /><br /> <br />
+
+
+    LastName: <br /> <input type="text" name="LastName" value="@Html.DisplayFor(model => model.LastName)" /><br /> <br />
+
+
+    Adress: <br /> <input type="text" name="Adress" value="@Html.DisplayFor(model => model.Adress)" /><br /> <br />
+
+
+    PhoneNumber: <br /> <input type="text" name="PhoneNumber" value="@Html.DisplayFor(model => model.PhoneNumber)" /><br /> <br />
+
+
+
+    <input type="submit" value="Edit User" />
+
+</form>
